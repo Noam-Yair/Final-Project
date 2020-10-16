@@ -92,15 +92,3 @@ def search_for_all_users(conn):
             send_email(items, user[3])
 
 
-def main():
-
-    database = r"C:\sqlite\db\pythonsqlite.db"
-    # create a database connection
-    conn = create_connection("db.sqlite3")
-    with conn:
-        select_all_items(conn, "Item")
-    search_for_all_users(conn)
-
-
-if __name__ == '__main__':
-    main()

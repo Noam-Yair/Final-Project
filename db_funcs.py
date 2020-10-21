@@ -14,6 +14,7 @@ def insert_data():
     mail = input("please enter your email address")
     notify_input = input(
         "please enter 1 if you want to get notification every time an item is uploaded or 0 for once a day")
+    # notify_input = check_input(notify_input, int)
 
     user = User(first_name=first_name, last_name=last_name, email=mail, notify=notify_input)
     db.session.add(user)
@@ -22,7 +23,7 @@ def insert_data():
     print("please enter the items you are looking for and the maximum price for each item")
     items_list = []
     while "*" != input("press * when finished"):
-        item_name = input("enter the item")
+        item_name = input("enter the item name")
         item_price = input("maximum price for " + item_name)
         item = Item(name=item_name, max_price=item_price)
         items_list.append(item)
